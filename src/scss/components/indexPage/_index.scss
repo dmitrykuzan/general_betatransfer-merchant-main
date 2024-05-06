@@ -1,0 +1,47 @@
+.index {
+  .header {
+    border-bottom: 2px solid #034072;
+    background-color: transparent;
+
+    .logo {
+      a {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .menu__link {
+      color: var(--clr-default-100);
+    }
+
+    &--fixed {
+      border-bottom: initial;
+
+      background-color: var(--clr-default-100);
+
+      .menu__link {
+        color: var(--primary-900);
+
+        @media (max-width: em(1100)) {
+          color: var(--clr-default-100);
+        }
+      }
+
+      .logo {
+        a {
+          &::after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}

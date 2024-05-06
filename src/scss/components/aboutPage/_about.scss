@@ -1,0 +1,117 @@
+.about {
+  padding-top: 18rem;
+  padding-bottom: 7.5rem;
+
+  @media (max-width: em(767)) {
+    padding-top: 10rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .section__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+
+    @media (max-width: em(1200)) {
+      flex-direction: column;
+    }
+
+    @media (max-width: em(767)) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__info,
+  &__inner {
+    flex: 0 0 48%;
+
+    @media (max-width: em(1200)) {
+      flex: initial;
+    }
+  }
+
+  &__info {
+    &-title {
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+      font-size: fluid-font(2.4rem, 1.8rem);
+      line-height: 135%;
+    }
+  }
+
+  &__inner {
+    margin-right: 1.5rem;
+
+    @media (max-width: em(1200)) {
+      margin-right: initial;
+      margin-bottom: 3rem;
+    }
+
+    &-img {
+      max-width: 77.4rem;
+      @media (max-width: em(1200)) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      img {
+        border-radius: 1.2rem;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3rem;
+
+      @media (max-width: em(1200)) {
+        justify-content: center;
+      }
+
+      @media (max-width: em(767)) {
+        margin-top: 1.5rem;
+      }
+
+      &-title {
+        margin-right: 1.5em;
+        font-weight: 700;
+        @media (max-width: em(767)) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__social {
+    &-list {
+      display: flex;
+    }
+
+    &-item + &-item {
+      margin-left: 1rem;
+    }
+
+    &-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      min-width: 4.2rem;
+      min-height: 4.2rem;
+      transition: transform var(--transition);
+
+      @media (hover) {
+        &:hover {
+          transform: translateY(-7px);
+          transition: transform var(--transition);
+        }
+      }
+    }
+  }
+}

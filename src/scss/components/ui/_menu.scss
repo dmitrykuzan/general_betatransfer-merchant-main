@@ -1,0 +1,122 @@
+$burgerMQ: em(1100);
+
+.menu {
+  margin-left: auto;
+
+  &-active {
+    .logo {
+      a {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $burgerMQ) {
+      flex-direction: column;
+      align-items: initial;
+      margin-top: 11rem;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__item {
+    & + .menu__item {
+      margin-left: 3rem;
+
+      @media (max-width: em(1300)) {
+        margin-left: 1.5rem;
+      }
+
+      @media (max-width: $burgerMQ) {
+        margin-top: 3rem;
+        margin-left: initial;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 140%;
+    color: var(--primary-900);
+
+    @media (max-width: $burgerMQ) {
+      font-size: 2rem;
+      color: var(--clr-default-100);
+    }
+
+    &::after {
+      content: attr(data-title);
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      overflow: hidden;
+      width: 0;
+      white-space: nowrap;
+      -webkit-text-fill-color: transparent;
+      background-image: var(--gradient);
+      background-clip: text;
+      transition: 0.6s ease-out width;
+    }
+
+    @media (hover) {
+      &:hover {
+        &::after {
+          width: 100%;
+          transition: 0.6s 0.3s ease-out width;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: 100%;
+
+    @media (min-width: em(1101)) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $burgerMQ) {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-right: 1.5rem;
+    padding-bottom: 3rem;
+    padding-left: 10rem;
+    width: 100%;
+    height: 100%;
+    // max-width: 32rem;
+    background-image: linear-gradient(225.52deg, #003a5a 0.89%, #000c3d 100%);
+    transition: right var(--transition);
+
+    @media (max-width: em(576)) {
+      padding-left: 1.5rem;
+    }
+
+    &--active {
+      right: 0;
+      transition: right var(--transition);
+    }
+  }
+}

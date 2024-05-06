@@ -1,0 +1,105 @@
+.plug {
+  padding-top: 18rem;
+  padding-bottom: 9rem;
+
+  @media (max-width: em(767)) {
+    padding-top: 9rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .section__text {
+    margin-top: 3rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 67rem;
+  }
+
+  &__list {
+    counter-reset: section;
+    position: relative;
+    display: grid;
+    grid-gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    @media (max-width: em(992)) {
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: em(576)) {
+      display: block;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 1.2rem;
+    padding: 9rem 3.5rem 5rem;
+
+    &::before {
+      counter-increment: section; /* Инкрементирует счётчик*/
+      content: "Шаг " counter(section) " ";
+      position: absolute;
+      left: 3.5rem;
+      top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10rem;
+      min-width: 9rem;
+      min-height: 3.4rem;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 135%;
+      color: var(--clr-default-100);
+      background-color: #2060ec;
+
+      @media (max-width: em(1200)) {
+        left: 1.5rem;
+        top: 1.5rem;
+      }
+    }
+
+    &-title {
+      // flex-grow: 1;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: fluid-font(1.7rem, 1.6rem);
+      line-height: 135%;
+      color: var(--primary-900);
+    }
+
+    &-text {
+      font-size: 1.4rem;
+      line-height: 135%;
+    }
+
+    @media (max-width: em(1200)) {
+      padding: 6.5rem 1.5rem 1.5rem;
+    }
+  }
+
+  &__item + &__item {
+    @media (max-width: em(576)) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .section__btn {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    @media (max-width: em(460)) {
+      width: 100%;
+      min-width: initial;
+    }
+  }
+}

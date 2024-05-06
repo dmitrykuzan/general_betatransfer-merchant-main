@@ -1,0 +1,42 @@
+.work {
+  padding-top: 7.5rem;
+  padding-bottom: 18rem;
+
+  @media (max-width: em(992)) {
+    padding-top: 4.5rem;
+    padding-bottom: 9rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: em(767)) {
+      flex-direction: column;
+    }
+  }
+
+  &__img,
+  &__info {
+    flex: 0 0 48%;
+  }
+
+  &__img {
+    margin-left: 1.5em;
+    max-width: 57rem;
+
+    @media (max-width: em(767)) {
+      margin-top: 3rem;
+      margin-left: initial;
+    }
+
+    img {
+      border-radius: 1.2rem;
+    }
+  }
+
+  .section__title {
+    margin-bottom: 2.5rem;
+  }
+}

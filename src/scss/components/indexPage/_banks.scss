@@ -1,0 +1,49 @@
+.banks {
+    padding-top: 12rem;
+
+    @media (max-width: em(992)) {
+        padding-top: 8rem;
+    }
+
+    @media (max-width: em(767)) {
+        padding-top: 6rem;
+    }
+
+    &__slider {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.1rem solid var(--clr-default-200);
+        border-radius: 1.2rem;
+        min-width: 25rem;
+        min-height: 8rem;
+
+        @media (max-width: em(767)) {
+            min-width: initial;
+        }
+    }
+
+    &__img {
+        // max-width: 21.6rem;
+        text-align: center;
+    }
+
+    &__pagination {
+        display: none;
+        @media (max-width: em(767)) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 1rem;
+        }
+    }
+
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+        max-width: 100%;
+    }
+}

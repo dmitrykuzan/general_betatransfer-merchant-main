@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Main</title>
+  <meta name="description" lang="ru" content="Описание сайта">
+
+  @include("html/common/head.html")
+</head>
+
+<body class="index">
+  <div class="wrapper" data-overlay="false">
+    @include("html/indexPage/header.html")
+    <main>
+      @include("html/indexPage/hero.html")
+      @include("html/indexPage/payment.html")
+      @include("html/indexPage/banks.html")
+      @include("html/indexPage/products.html")
+      @include("html/indexPage/media.html")
+      @include("html/indexPage/qiwi.html")
+      @include("html/indexPage/benifits.html")
+      @include("html/indexPage/support.html")
+      @include("html/indexPage/plug.html")
+      @include("html/indexPage/partners.html")
+      @include("html/indexPage/works.html")
+      @include("html/indexPage/reviews.html")
+      @include("html/common/modal-request.html")
+    </main>
+    @include("html/common/footer.html")
+  </div>
+</body>
+
+</html>

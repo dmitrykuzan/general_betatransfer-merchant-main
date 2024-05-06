@@ -1,0 +1,69 @@
+$burgerMQ: em(1100);
+
+.burger {
+  $width: 2.4rem;
+  $height: 2rem;
+  $bgColor: var(--gradient);
+  $burgerLineHeight: 0.3rem;
+
+  display: none;
+
+  @media (max-width: $burgerMQ) {
+    position: relative;
+    z-index: 15;
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: transparent;
+
+    &::after,
+    &::before,
+    span {
+      content: "";
+      position: absolute;
+      left: 0;
+      border-radius: 1.5rem;
+      width: 100%;
+      height: $burgerLineHeight;
+      background-image: $bgColor;
+    }
+
+    &::before {
+      top: 0;
+      transition: transform var(--transition), top var(--transition);
+    }
+
+    &::after {
+      left: initial;
+      right: 0;
+      bottom: 0;
+      width: 60%;
+      transition: transform var(--transition), bottom var(--transition);
+    }
+
+    span {
+      top: 0.85rem;
+      transition: transform var(--transition);
+    }
+
+    &--active {
+      &::before {
+        top: 0.85rem;
+        transform: rotate(45deg);
+        transition: transform var(--transition), top var(--transition);
+      }
+
+      &::after {
+        bottom: 0.8rem;
+        width: 100%;
+        transform: rotate(-45deg);
+        transition: transform var(--transition), bottom var(--transition);
+      }
+
+      span {
+        transform: scale(0);
+        transition: transform var(--transition);
+      }
+    }
+  }
+}

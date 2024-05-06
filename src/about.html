@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>About</title>
+  <meta name="description" lang="ru" content="Описание сайта">
+
+  @include("html/common/head.html")
+</head>
+
+<body>
+  <div class="wrapper" data-overlay="false">
+    @include("html/common/header.html")
+    <main>
+      @include("html/aboutPage/about.html")
+      @include("html/aboutPage/offer.html")
+      @include("html/aboutPage/work.html")
+      @include("html/common/modal-request.html")
+    </main>
+    @include("html/common/footer.html")
+  </div>
+</body>
+
+</html>

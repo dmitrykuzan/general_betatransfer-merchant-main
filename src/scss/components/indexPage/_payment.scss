@@ -1,0 +1,120 @@
+.payment {
+    padding-top: 5rem;
+    // padding-bottom: 13rem;
+
+    @media (max-width: em(767)) {
+        padding-top: 3.5rem;
+        // padding-bottom: 6rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: em(992)) {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 1.5rem;
+        max-width: 47rem;
+
+        @media (max-width: em(992)) {
+            margin-right: initial;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        right: -8rem;
+        bottom: -7rem;
+        max-width: 17.7rem;
+
+        @media (max-width: em(1200)) {
+            bottom: -6rem;
+        }
+
+        @media (max-width: em(992)) {
+            bottom: 1rem;
+        }
+
+        @media (max-width: em(767)) {
+            right: -2rem;
+            max-width: 14.7rem;
+        }
+
+        @media (max-width: em(576)) {
+            right: 0 !important;
+            bottom: 3rem !important;
+            max-width: 10.7rem !important;
+        }
+
+        @media (max-width: em(420)) {
+            right: -1rem !important;
+            bottom: -2rem !important;
+        }
+    }
+
+    &__info {
+        max-width: 57rem;
+
+        @media (max-width: em(992)) {
+            max-width: initial;
+        }
+    }
+
+    .section__text {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+
+        @media (max-width: em(767)) {
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1.5rem;
+
+        @media (max-width: em(767)) {
+            display: none;
+        }
+    }
+
+    &__item {
+        max-width: 7.2rem;
+
+        & + .payment__item {
+            margin-left: 3rem;
+
+            @media (max-width: em(767)) {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+
+    &__warning {
+        max-width: 27rem;
+        font-size: 1.4rem;
+        line-height: 130%;
+        color: var(--clr-default-800);
+    }
+
+    .section__btn {
+        @media (max-width: em(460)) {
+            width: 100%;
+        }
+    }
+}

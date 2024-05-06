@@ -1,0 +1,56 @@
+.qiwi {
+    padding-top: 20rem;
+    padding-bottom: 9rem;
+
+    @media (max-width: em(992)) {
+        padding-top: 7rem;
+        padding-bottom: 4.5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: em(992)) {
+            flex-direction: column;
+        }
+    }
+
+    &__img {
+        margin-right: 1.5rem;
+        width: 100%;
+        max-width: 53.5rem;
+
+        @media (max-width: em(992)) {
+            margin-right: initial;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__info {
+        max-width: 60rem;
+
+        @media (max-width: em(992)) {
+            max-width: initial;
+        }
+    }
+
+    .section__text {
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+        color: var(--clr-default-800);
+
+        @media (max-width: em(767)) {
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    .section__btn {
+        @media (max-width: em(460)) {
+            width: 100%;
+            min-width: initial;
+        }
+    }
+}

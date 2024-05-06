@@ -1,0 +1,236 @@
+.blog {
+  padding-top: 4rem;
+  padding-bottom: 18rem;
+
+  @media (max-width: em(992)) {
+    padding-bottom: 14rem;
+  }
+
+  @media (max-width: em(767)) {
+    padding-top: 2rem;
+    padding-bottom: 9rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-gap: 3rem 4.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: em(1200)) {
+      grid-gap: 2rem;
+    }
+
+    @media (max-width: em(992)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: em(576)) {
+      display: block;
+    }
+  }
+
+  &__item {
+    border-radius: 1.2rem;
+    background-color: #f7f7f7;
+    cursor: pointer;
+
+    &-img {
+      max-width: 37rem;
+      img {
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+        width: 100%;
+      }
+
+      @media (max-width: em(992)) {
+        max-width: 100%;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    &-title {
+      margin-bottom: 1rem;
+      a {
+        font-weight: 700;
+        font-size: fluid-font(2.4rem, 1.8rem);
+        line-height: 130%;
+        color: var(--primary-900);
+        transition: color var(--transition);
+      }
+    }
+
+    &-count {
+      display: flex;
+      align-items: center;
+
+      &-img {
+        margin-right: 0.5rem;
+        max-width: 1.8rem;
+      }
+    }
+
+    &-info {
+      padding: 2rem;
+    }
+
+    @media (hover) {
+      &:hover {
+        .blog__item-title {
+          a {
+            color: var(--primary-400);
+            transition: color var(--transition);
+          }
+        }
+      }
+    }
+  }
+
+  &__item + &__item {
+    @media (max-width: em(576)) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 41rem;
+    color: var(--primary-900);
+
+    @media (max-width: em(767)) {
+      margin-top: 4rem;
+    }
+
+    @media (max-width: em(576)) {
+      display: none;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+
+    &-item {
+      border-radius: 0.8rem;
+      background-color: transparent;
+
+      a {
+        display: inline-block;
+        padding: 1.2rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 140%;
+        color: var(--primary-900);
+      }
+
+      &--active {
+        background-color: #59bdef;
+
+        a {
+          color: var(--clr-default-100);
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.6rem;
+
+      svg {
+        max-width: 2.6rem;
+        fill: var(--primary-900);
+      }
+
+      &--left {
+        .blog__pagination-arrow {
+          margin-right: 1rem;
+
+          @media (hover) {
+            &:hover {
+              transform: translateX(-0.7rem);
+            }
+          }
+        }
+        @media (hover) {
+          &:hover {
+            .blog__pagination-arrow {
+              transform: translateX(-0.7rem);
+              transition: transform var(--transition);
+            }
+          }
+        }
+      }
+
+      &--right {
+        .blog__pagination-arrow {
+          margin-left: 1rem;
+          transform: rotate(-180deg);
+        }
+        @media (hover) {
+          &:hover {
+            .blog__pagination-arrow {
+              transform: translateX(0.7rem) rotate(-180deg);
+              transition: transform var(--transition);
+            }
+          }
+        }
+      }
+
+      &--disabled {
+        color: #9f9f9f;
+        cursor: initial;
+
+        @media (hover) {
+          &.blog__pagination-btn--left:hover {
+            .blog__pagination-arrow {
+              transform: initial;
+            }
+          }
+
+          &.blog__pagination-btn--right:hover {
+            .blog__pagination-arrow {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+
+        svg {
+          fill: #9f9f9f;
+        }
+      }
+    }
+
+    &-arrow {
+      width: 2.6rem;
+      height: 2.6rem;
+      transition: transform var(--transition);
+    }
+  }
+
+  &__btn {
+    display: none;
+    @media (max-width: em(576)) {
+      display: inline-flex;
+      margin-top: 4rem;
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+      min-width: initial;
+    }
+  }
+}

@@ -1,0 +1,275 @@
+.calendar {
+  padding-block: 13rem 16rem;
+
+  .container {
+    overflow: auto;
+  }
+
+  &__title {
+    max-width: 75rem;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__subtitle {
+    margin-top: 3rem;
+    max-width: 52rem;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &-wrapper {
+    margin-top: 4.8rem;
+    border: 0.1rem solid var(--clr-default-200);
+    border-radius: 3.2rem;
+    padding: 2.4rem;
+    background-color: var(--clr-default-150);
+
+    @media (max-width: em(992)) {
+      margin-top: 3.2rem;
+      border-radius: 1.2rem;
+      padding: 2.4rem 1.2rem 1.2rem;
+    }
+  }
+
+  &-fullcalendar {
+    &.fc {
+      .fc-header-toolbar {
+        margin-bottom: 3.2rem;
+
+        .fc-toolbar-title {
+          font-family: "Manrope", sans-serif;
+          font-weight: 700;
+          font-size: 2.4rem;
+          color: var(--clr-default-800);
+
+          @media (max-width: em(992)) {
+            font-size: 1.4rem;
+          }
+        }
+
+        .fc-toolbar-chunk:nth-child(2) {
+          button {
+            border: none;
+            min-height: 4.8rem;
+            font-family: "Manoli", sans-serif;
+            font-weight: 500;
+            font-size: 1.8rem;
+            color: var(--primary-900);
+            background-color: var(--clr-default-100);
+
+            &:focus {
+              box-shadow: none;
+            }
+
+            @media (max-width: em(992)) {
+              min-height: 3.2rem;
+              font-size: 1.2rem;
+
+              &:not(:first-child) {
+                margin-left: 0.4rem;
+              }
+            }
+          }
+        }
+
+        .fc-toolbar-chunk:last-child {
+          display: none;
+        }
+      }
+
+      &.fc-theme-standard td,
+      &.fc-theme-standard th {
+        border: none;
+        border-radius: 0.8rem;
+      }
+
+      &.fc-theme-standard td,
+      &.fc-theme-standard th {
+        &.fc-day-other {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      .fc-daygrid-day-frame {
+        padding: 0.8rem;
+
+        @media (max-width: em(992)) {
+          padding: 0;
+          height: 100%;
+
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &.fc-theme-standard .fc-scrollgrid {
+        border: none;
+      }
+
+      .fc-scrollgrid-sync-table {
+        border-collapse: separate;
+        border-spacing: 0.4rem;
+        background-color: var(--clr-default-150);
+      }
+
+      &.fc-theme-standard th.fc-col-header-cell {
+        font-family: "Manrope", sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
+        text-align: left;
+        color: var(--primary-900);
+        background-color: var(--clr-default-150);
+
+        > div {
+          height: 10rem;
+          min-height: 2.6rem;
+
+          @media (max-width: em(992)) {
+            height: initial;
+            min-height: initial;
+          }
+        }
+
+        .fc-col-header-cell-cushion {
+          margin-left: 1rem;
+        }
+
+        @media (max-width: em(992)) {
+          font-size: 1.4rem;
+        }
+      }
+
+      .fc-daygrid-day {
+        height: 10rem;
+        background-color: var(--clr-default-100);
+        transition: background-color var(--transition);
+
+        .fc-daygrid-day-events {
+          @media (max-width: em(992)) {
+            display: none;
+          }
+        }
+
+        &.fc-has-event {
+          .fc-daygrid-day-top .fc-daygrid-day-number {
+            color: var(--clr-default-100);
+            background-color: #ff3c31;
+          }
+        }
+
+        &.fc-clicked {
+          @media (max-width: em(992)) {
+            .fc-daygrid-day-top .fc-daygrid-day-number {
+              color: var(--clr-default-100);
+              background-color: var(--primary-500);
+            }
+          }
+        }
+
+        @media (hover) {
+          &:hover {
+            background-color: var(--primary-500);
+
+            .fc-daygrid-day-top .fc-daygrid-day-number {
+              background-color: var(--clr-default-100);
+            }
+
+            .fc-event-title {
+              color: var(--clr-default-100);
+            }
+
+            &.fc-has-event {
+              .fc-daygrid-day-top .fc-daygrid-day-number {
+                color: var(--clr-default-800);
+              }
+            }
+          }
+        }
+
+        @media (max-width: em(992)) {
+          height: initial;
+        }
+      }
+
+      .fc-daygrid-day-top {
+        flex-direction: row;
+
+        .fc-daygrid-day-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          width: 4rem;
+          height: 4rem;
+          font-family: "Manrope", sans-serif;
+          font-weight: 500;
+          font-size: 1.8rem;
+          color: var(--primary-900);
+          transition: background-color var(--transition);
+
+          @media (max-width: em(992)) {
+            border-radius: 0.4rem;
+            width: 100%;
+            height: 100%;
+            font-size: 1.4rem;
+          }
+        }
+
+        @media (max-width: em(992)) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .fc-event {
+        margin: 0;
+        border: none;
+        font-family: "Manrope", sans-serif;
+        font-weight: 400;
+        font-size: 1.4rem;
+        background-color: transparent;
+
+        .fc-event-title {
+          text-overflow: ellipsis;
+          color: var(--clr-default-800);
+          transition: color var(--transition);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &-event {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    color: var(--primary-900);
+    padding-inline: 0.6rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: inherit;
+
+      svg {
+        flex-shrink: 0;
+        margin-left: 0.8rem;
+      }
+    }
+
+    @media (min-width: em(993)) {
+      display: none;
+    }
+  }
+
+  @media (max-width: em(992)) {
+    padding-block: 11rem;
+  }
+
+  @media (max-width: em(768)) {
+    padding-block: 8rem;
+  }
+}

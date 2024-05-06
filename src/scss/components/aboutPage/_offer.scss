@@ -1,0 +1,41 @@
+.offer {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+
+  @media (max-width: em(767)) {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: em(992)) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    margin-left: 1.5rem;
+    max-width: 56.6rem;
+
+    @media (max-width: em(992)) {
+      margin-top: 3rem;
+      margin-left: initial;
+    }
+  }
+
+  &__info {
+    max-width: 57rem;
+
+    @media (max-width: em(992)) {
+      max-width: initial;
+    }
+  }
+
+  .section__title {
+    margin-bottom: 2.5rem;
+  }
+}

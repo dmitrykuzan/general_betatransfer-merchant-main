@@ -1,0 +1,42 @@
+.events-topic {
+  padding-block: 13rem 7rem;
+
+  @media (max-width: em(768)) {
+    padding-block: 8rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: em(768)) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__info {
+    flex-basis: 46%;
+    margin-top: 4rem;
+    @media (max-width: em(768)) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__text {
+    margin-top: 1.6rem;
+  }
+
+  &__btn {
+    margin-top: 5rem;
+  }
+
+  &__img {
+    display: flex;
+    flex-basis: 46%;
+
+    @media (max-width: em(768)) {
+      flex-basis: 100%;
+    }
+  }
+}
